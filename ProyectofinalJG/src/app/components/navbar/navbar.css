@@ -1,0 +1,124 @@
+/* Contenedor principal de la barra de navegación */
+.navbar {
+    background-color: #0d0e15 !important;
+    /* Fondo oscuro profundo */
+    border-bottom: 2px solid #bd00ff;
+    /* Línea de neón violeta abajo */
+    box-shadow: 0 0 15px rgba(189, 0, 255, 0.4);
+    /* Resplandor violeta */
+    padding: 0.8rem 1rem;
+}
+
+/* Título llamativo (COSMXOXO) más grande y con neón expandido */
+.navbar-brand {
+  font-family: 'Arial Black', Impact, sans-serif;
+  font-size: 2.6rem; /* Aumentado de 1.8rem a 2.6rem */
+  font-weight: 900;
+  letter-spacing: 4px; /* Más espacio entre letras para estilo logo */
+  color: #fff !important;
+  text-shadow: 
+    0 0 5px #fff,
+    0 0 10px #ff007f, /* Neón Rosa */
+    0 0 20px #ff007f,
+    0 0 40px #ff007f, /* Capa extra de brillo rosa */
+    0 0 60px #bd00ff; /* Neón Violeta de fondo */
+  transition: all 0.3s ease;
+}
+
+/* Efecto al pasar el cursor (Hover) */
+.navbar-brand:hover {
+  text-shadow: 
+    0 0 5px #fff,
+    0 0 15px #00ff66, /* Cambia a neón verde */
+    0 0 30px #00ff66,
+    0 0 45px #00ff66;
+  color: #fff !important;
+}
+
+
+/* Enlaces de navegación (Inicio, Nosotros, etc.) */
+.navbar-nav .nav-link {
+    color: #a5a6b5 !important;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.95rem;
+    margin: 0 5px;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+/* Enlace activo (Inicio) - Neón Verde */
+.navbar-nav .nav-link.active {
+    color: #00ff66 !important;
+    text-shadow: 0 0 8px rgba(0, 255, 102, 0.6);
+}
+
+/* Efecto Hover en los enlaces - Brillo Rosa */
+.navbar-nav .nav-link:hover:not(.disabled) {
+    color: #ff007f !important;
+    text-shadow: 0 0 8px rgba(255, 0, 127, 0.8);
+}
+
+/* Menú desplegable (Dropdown) */
+.dropdown-menu {
+    background-color: #161824;
+    border: 1px solid #bd00ff;
+    box-shadow: 0 0 10px rgba(189, 0, 255, 0.3);
+}
+
+.dropdown-item {
+    color: #fff;
+}
+
+.dropdown-item:hover {
+    background-color: #ff007f;
+    color: #fff;
+}
+
+.dropdown-divider {
+    border-top: 1px solid #bd00ff;
+}
+
+/* Botón de menú hamburguesa para celulares */
+.navbar-toggler {
+    border-color: #ff007f !important;
+    box-shadow: 0 0 8px rgba(255, 0, 127, 0.5);
+}
+
+.navbar-toggler-icon {
+    /* Convierte el icono de Bootstrap a color rosa neón */
+    filter: invert(19%) sepia(97%) saturate(6295%) hue-rotate(319deg) brightness(103%) contrast(107%);
+}
+
+/* Buscador e Input */
+.form-control[type="search"] {
+    background-color: #161824;
+    border: 1px solid #bd00ff;
+    color: #fff;
+}
+
+.form-control[type="search"]:focus {
+    background-color: #161824;
+    border-color: #00ff66;
+    box-shadow: 0 0 8px rgba(0, 255, 102, 0.6);
+    color: #fff;
+}
+
+/* Botón de buscar personalizado */
+.btn-outline-success {
+    color: #00ff66 !important;
+    border-color: #00ff66 !important;
+    background-color: transparent;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-success:hover {
+    background-color: #00ff66 !important;
+    color: #000 !important;
+    box-shadow: 0 0 15px #00ff66;
+}
+
+/* Estilo para links deshabilitados */
+.nav-link.disabled {
+    color: #444554 !important;
+    text-shadow: none !important;
+}

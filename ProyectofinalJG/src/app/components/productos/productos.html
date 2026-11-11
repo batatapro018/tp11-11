@@ -1,0 +1,31 @@
+<div class="container my-5">
+    <h2 class="text-white mb-4 fw-bold">Catálogo de Canciones</h2>
+
+    <!-- Sección de detalle cuando se presiona "Ver" en una tarjeta -->
+    @if (cancionSeleccionada) {
+    <div class="card bg-dark text-white border-neon-pink p-4 mb-5 shadow-lg position-relative">
+        <button class="btn-close btn-close-white position-absolute top-0 end-0 m-3"
+            (click)="cancionSeleccionada = null"></button>
+        <h3 class="text-neon-pink fw-bold">{{ cancionSeleccionada.tituloCan }}</h3>
+        <h5 class="text-neon-cyan mb-2">Artista: {{ cancionSeleccionada.nomArtista }}</h5>
+        <p><strong>Álbum:</strong> {{ cancionSeleccionada.album }}</p>
+        <p><strong>Inspiración:</strong> {{ cancionSeleccionada.descripcion }}</p>
+        <p class="text-muted mb-0"><strong>Créditos:</strong> {{ cancionSeleccionada.creditos }}</p>
+    </div>
+    }
+
+  
+    @if (listaCanciones.length > 0) {
+    <div class="row g-4">
+        @for (cancion of listaCanciones; track cancion.id) {
+        <div class="col-md-4">
+            <app-productocard [cancion]="cancion" (seleccionar)="manejarSeleccion($event)"></app-productocard>
+        </div>
+        }
+    </div>
+    } @else {
+    <div class="alert alert-dark text-center text-muted p-5 border border-secondary">
+        No hay canciones disponibles por el momento.
+    </div>
+    }
+</div>

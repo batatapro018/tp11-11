@@ -1,0 +1,193 @@
+/* ==========================================================================
+   CONTEXTO GENERAL Y CONTENEDORES
+   ========================================================================== */
+
+.inicio-neon-container { 
+  background-color: #0d0e15; /* El mismo fondo oscuro de tu navbar/footer */ 
+  padding: 60px 0; 
+  overflow: hidden; /* Evita que el carrusel infinito rompa los márgenes de la pantalla */ 
+}
+
+/* Título de la sección con Neón Rosa en reposo (Estilo COSMXOXO) */
+.titulo-wave { 
+  font-family: 'Arial Black', Impact, sans-serif; 
+  font-size: 2.5rem; 
+  font-weight: 900; 
+  color: #fff; 
+  text-shadow: 0 0 5px #fff, 0 0 10px #ff007f, 0 0 20px #ff007f; 
+  text-transform: uppercase; 
+}
+
+.subtitulo-wave { 
+  color: #a5a6b5; 
+  letter-spacing: 1px; 
+  font-size: 0.9rem; 
+}
+
+/* ==========================================================================
+   NUEVO: EFECTO NEON SPECTRUM EQUALIZER (AL PASAR EL MOUSE)
+   ========================================================================== */
+
+.neon-equalizer {
+  display: inline-flex; /* Permite animación flex sin romper el text-center de Bootstrap */
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.neon-equalizer span {
+  display: inline-block;
+  transition: all 0.3s ease;
+  /* Estado inicial: mantiene el color rosa de tu diseño original */
+  text-shadow: 0 0 5px #fff, 0 0 10px #ff007f, 0 0 20px #ff007f;
+}
+
+/* Activa la oscilación vertical en todas las letras simulando barras de audio */
+.neon-equalizer:hover span {
+  animation: equalizerWave 0.5s ease-in-out infinite alternate;
+}
+
+/* Modificación dinámica del espectro de colores neón por letra al pasar el mouse */
+.neon-equalizer:hover span:nth-child(4n+1) {
+  color: #ff007f; /* rosa Neón */
+  text-shadow: 0 0 5px #fff, 0 0 10px #ff007f, 0 0 20px #ff007f;
+  animation-delay: -0.1s;
+}
+
+.neon-equalizer:hover span:nth-child(4n+2) {
+  color: #0026ff; /*azul Neón */
+  text-shadow: 0 0 5px #fff, 0 0 10px#0026ff, 0 0 20px #0026ff;
+  animation-delay: -0.3s;
+}
+
+.neon-equalizer:hover span:nth-child(4n+3) {
+  color: #a502e0; /* Violeta Neón */
+  text-shadow: 0 0 5px #fff, 0 0 10px #a502e0, 0 0 20px #a502e0;
+  animation-delay: -0.2s;
+}
+
+.neon-equalizer:hover span:nth-child(4n+4) {
+  color: #00e244; /* verde Neón */
+  text-shadow: 0 0 5px #fff, 0 0 10px #00e244, 0 0 20px #00e244;
+  animation-delay: -0.4s;
+}
+
+/* ==========================================================================
+   ESTRUCTURA DEL CARRUSEL DE CANCIONES
+   ========================================================================== */
+
+/* Envoltura del carrusel */
+.wave-carousel-wrapper { 
+  width: 100%; 
+  overflow: hidden; 
+  position: relative; 
+  padding: 40px 0; 
+}
+
+/* Track de animación: mueve todas las canciones hacia la izquierda de forma infinita */
+/* Track de animación: se mueve más rápido ajustando los segundos a 14s */
+.wave-track { 
+  display: flex; 
+  width: max-content; 
+  gap: 30px; 
+  animation: scrollHorizontal 14s linear infinite; /* Cambiado a 14s para mayor velocidad */
+}
+
+/* Pausar el movimiento al pasar el mouse por encima para poder interactuar */
+.wave-track:hover { 
+  animation-play-state: paused; 
+}
+
+/* Estructura de cada Tarjeta de Canción */
+.song-card { 
+  width: 180px; 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  text-align: center; 
+  transition: transform 0.3s ease; 
+}
+
+.song-card img { 
+  width: 100%; 
+  border-radius: 8px; 
+  border: 2px solid #bd00ff; /* Borde Neón Violeta */ 
+  box-shadow: 0 0 10px rgba(189, 0, 255, 0.4); 
+  transition: all 0.3s ease; 
+}
+
+.song-title { 
+  color: #00ff66; /* Texto Neón Verde */ 
+  font-size: 0.85rem; 
+  font-weight: bold; 
+  text-transform: uppercase; 
+  margin-top: 10px; 
+  letter-spacing: 1px; 
+}
+
+/* Efecto hover individual para destacar la portada activa */
+.song-card:hover img { 
+  border-color: #00ff66; /* Pasa a Verde Neón */ 
+  box-shadow: 0 0 20px #00ff66; 
+  transform: scale(1.05); 
+}
+
+/* --- EFECTO OLA RETRO (Modulación de subida y bajada en CSS de las tarjetas) --- */
+.card-up { 
+  animation: waveUp 4s ease-in-out infinite alternate; 
+}
+
+.card-down { 
+  animation: waveDown 4s ease-in-out infinite alternate; 
+}
+
+/* Retrasos en el ciclo de la ola para crear desincronización (el efecto fluido de ola) */
+.card-up-delayed { 
+  animation: waveUp 4s ease-in-out infinite alternate; 
+  animation-delay: -2s; 
+}
+
+.card-down-delayed { 
+  animation: waveDown 4s ease-in-out infinite alternate; 
+  animation-delay: -2s; 
+}
+
+/* Caja de respaldo por si la imagen no carga */
+.fallback-img { 
+  width: 180px; 
+  height: 180px; 
+  background: #141622; 
+  border-radius: 8px; 
+  border: 2px solid #bd00ff; 
+  box-shadow: 0 0 10px rgba(189, 0, 255, 0.4); 
+}
+
+/* ==========================================================================
+   ANIMACIONES DE LOS KEYFRAMES
+   ========================================================================== */
+
+/* Movimiento vertical del ecualizador (Título) */
+@keyframes equalizerWave {
+  0% {
+    transform: translateY(0) scaleY(1);
+  }
+  100% {
+    transform: translateY(-15px) scaleY(1.2); /* Sube y se estira ligeramente */
+  }
+}
+
+/* Movimiento horizontal continuo (Carrusel) */
+@keyframes scrollHorizontal { 
+  0% { transform: translateX(0); } 
+  100% { transform: translateX(-50%); } /* Se desplaza exactamente la mitad (el bloque duplicado) */ 
+}
+
+/* Movimientos verticales de ola (Tarjetas de canciones) */
+@keyframes waveUp { 
+  0% { transform: translateY(-15px); } 
+  100% { transform: translateY(15px); } 
+}
+
+@keyframes waveDown { 
+  0% { transform: translateY(15px); } 
+  100% { transform: translateY(-15px); } 
+}

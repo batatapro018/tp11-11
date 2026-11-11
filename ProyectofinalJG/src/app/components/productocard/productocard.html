@@ -1,0 +1,11 @@
+<div class="card neon-card h-100 bg-dark text-light border-0 shadow-lg">
+    <img [src]="cancion.imagen" class="card-img-top" [alt]="cancion.tituloCan"
+        style="height: 180px; object-fit: cover;">
+    <div class="card-body d-flex flex-column">
+        <span class="badge bg-neon-pink mb-2 align-self-start">{{ cancion.album }}</span>
+        <h5 class="card-title text-neon-cyan fw-bold">{{ cancion.tituloCan }}</h5>
+        <p class="card-text text-muted small mb-1">Artista: <span class="text-light">{{ cancion.nomArtista }}</span></p>
+        <p class="card-text flex-grow-1 text-secondary small">{{ cancion.descripcion | slice:0:70 }}...</p>
+        <button class="btn btn-outline-neon mt-auto w-100" (click)="verDetalle()">Ver</button>
+    </div>
+</div>

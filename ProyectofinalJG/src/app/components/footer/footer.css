@@ -1,0 +1,97 @@
+/* Contenedor principal del Footer (Mantiene tu fondo y neón violeta) */
+.footer-neon {
+    background-color: #0d0e15 !important;
+    border-top: 2px solid #bd00ff;
+    box-shadow: 0 0 15px rgba(189, 0, 255, 0.4);
+    color: #fff;
+}
+
+/* Logo en el Footer (Mantiene tu estilo COSMXOXO con neón rosa) */
+.footer-brand {
+    font-family: 'Arial Black', Impact, sans-serif;
+    font-size: 1.8rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+    color: #fff !important;
+    text-decoration: none;
+    text-shadow:
+        0 0 5px #fff,
+        0 0 10px #ff007f,
+        0 0 20px #ff007f;
+    transition: all 0.3s ease;
+}
+
+.footer-brand:hover {
+    text-shadow: 0 0 15px #00ff66; /* Cambia a verde en hover */
+}
+
+.footer-tagline {
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* Títulos de las nuevas columnas (Estilo neón violeta sutil) */
+.footer-title {
+    font-family: 'Arial Black', Impact, sans-serif;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    color: #bd00ff !important;
+    text-shadow: 0 0 5px rgba(189, 0, 255, 0.5);
+}
+
+/* Enlaces del Footer - Estilo Neón Rosa (Adaptado para lista vertical sin perder tu padding ni hover) */
+.footer-link {
+    color: #a5a6b5 !important;
+    text-decoration: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    display: inline-block;
+    padding: 5px 0;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.footer-link:hover {
+    color: #ff007f !important;
+    text-shadow: 0 0 8px rgba(255, 0, 127, 0.8);
+}
+
+/* Textos informativos de contacto y descripción */
+.footer-text {
+    color: #a5a6b5 !important;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.footer-text strong {
+    color: #fff;
+}
+
+/* Botones de Redes Sociales - Estilo Neón Verde */
+.btn-social {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 38px;
+    text-align: center;
+    border: 1px solid #00ff66;
+    color: #00ff66 !important;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-left: 8px;
+    transition: all 0.3s ease;
+}
+
+.btn-social:hover {
+    background-color: #00ff66;
+    color: #000 !important;
+    box-shadow: 0 0 15px #00ff66;
+    transform: translateY(-3px);
+}
+
+/* Línea sutil para los créditos inferiores */
+.footer-credits {
+    border-top: 1px solid rgba(189, 0, 255, 0.2);
+}
